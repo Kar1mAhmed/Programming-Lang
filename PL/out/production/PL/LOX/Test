@@ -1,0 +1,2 @@
+var myName = "Karim Ahmed"
+print myName
