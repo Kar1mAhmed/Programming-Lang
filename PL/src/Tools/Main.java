@@ -9,7 +9,7 @@ public class Main {
 
         GenerateAst test = new GenerateAst();
 
-        test.main(Arrays.asList("E:\\Coding\\JAVA\\PL\\src\\LOX").toArray(new String[0]));
+        test.main(Arrays.asList("E:\\Coding\\JAVA\\PL\\src\\Tools").toArray(new String[0]));
 
     }
 }
