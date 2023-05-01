@@ -1,0 +1,3 @@
+var word = "aloo " * 10;
+
+print word;

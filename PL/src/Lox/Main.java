@@ -7,8 +7,8 @@ public class Main {
 
         Lox l = new Lox();
 
-        //l.runFile("E:\\Coding\\JAVA\\PL\\src\\com\\craftinginterpreters\\Test");
-        l.runPrompt();
+        l.runFile("E:\\Coding\\Programming-Lang\\PL\\src\\Tools\\Test");
+        //l.runPrompt();
 
     }
 }
