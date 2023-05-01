@@ -55,12 +55,34 @@ class Interpreter implements Expr.Visitor<Object> {
                     return (String) left + (String) right;
                 }
             case MINUS:
-                checkNumberOperands(expr.operator, left, right);
-                return (Object) ((double)left - (double)right);
+                if(left instanceof Double && right instanceof Double){
+                    return (Object) ((Double) left / (Double) right);
+                }
+
+                if(left instanceof Double && right instanceof String){
+                    int orginal_len = ((String) right).length();
+                    int to_remove = Double.valueOf((Double)left).intValue();
+
+                    if(to_remove > orginal_len)
+                        throw new RuntimeError(expr.operator, "Inger part should be smaller than String length");
+
+                    return  ((String) right).substring(to_remove, orginal_len);
+                }
+                if(left instanceof String && right instanceof Double){
+                    int orginal_len = ((String) left).length();
+                    int to_remove = Double.valueOf((Double)right).intValue();
+
+                    if(to_remove > orginal_len)
+                        throw new RuntimeError(expr.operator, "Inger part should be smaller than String length");
+
+                    return  ((String) left).substring(0, orginal_len - to_remove);
+                }
+                throw new RuntimeError(expr.operator, "Operand must be a number or string.");
             case SLASH:
-                checkNumberOperands(expr.operator, left, right);
-                if((Double) right == 0.0) throw new RuntimeError(expr.operator, "Can't divide by ZERO.");
-                return (Object) ((double)left / (double)right);
+                if(left instanceof Double && right instanceof Double){
+                    return (Object) ((Double) left / (Double) right);
+                }
+                throw new RuntimeError(expr.operator, "Operands must be numbers.");
             case STAR:
                 if(left instanceof Double && right instanceof Double){
                     return (Object) ((Double) left * (Double) right);
