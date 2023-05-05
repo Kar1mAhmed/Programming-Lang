@@ -1,5 +1,5 @@
-var word = "FCIS MANSOURA UNIVERSITY";
+print "hello world";
 
-for(var i = 0; i < 20; i = i + 1){
-    print word - i;
-}
+var num = 20;
+
+print num * 5;

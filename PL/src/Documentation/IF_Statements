@@ -1,0 +1,49 @@
+// Checking for equality
+var num1 = 20;
+var num2 = 10;
+
+if (num1 > num2)
+{
+    print "Number 1 is greater than number 2";
+}
+
+else if (num1 < num2)
+{
+    print "Number 1 is less than number 2";
+}
+
+else
+{
+    print "Equals";
+}
+
+
+//********************************************************
+
+//Grade Calculation
+var grade = //Enter the grade;
+
+if (grade >= 85)
+{
+    print "Excellent";
+}
+
+else if (grade >= 75)
+{
+    print "very good";
+}
+
+else if (grade >= 60)
+{
+    print "Good";
+}
+
+else if (grade >= 50)
+{
+    print "Pass";
+}
+
+else
+{
+    print "Failed";
+}

@@ -1,0 +1,5 @@
+print "hello world";
+
+var num = 20;
+
+print num * 5;
